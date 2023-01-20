@@ -15,7 +15,7 @@ export const getPokemonInfo = async ( nameOrId: string ) => {
 
     } catch (error) {
 
-        
+        console.log(error);
         
     }
 
