@@ -63,48 +63,60 @@ const PokemonPage : NextPage<Props> = ({ pokemon }) => {
 
                 <Grid xs={ 12 } sm={ 8 }>
                     <Card>
-                        <Card.Header css={{ display: 'flex', justifyContent : 'space-between' }}>
-                            <Text h1 transform='capitalize'>{ pokemon.name }</Text>
+                      <Card.Header 
+                        css={{ 
+                          display: 'flex', 
+                          justifyContent : 'space-between',
+                          flexDirection : 'column',
+                          '@sm': {
+                            display: 'flex',
+                            flexDirection: 'row'
+                          },
+                          
+                        }}
+                      >
+                        <Text h1 transform='capitalize'>{ pokemon.name }</Text>
 
-                            <Button
-                              color='gradient'
-                              ghost={ !isInFavorites }
-                              onPress={ onToggleFavorite }
-                            >
-                                { isInFavorites ? 'Eliminar de favoritos' : 'Guardar en favoritos' }
-                            </Button>
+                        <Button
+                          color='gradient'
+                          ghost={ !isInFavorites }
+                          onPress={ onToggleFavorite }
+                        >
+                            { isInFavorites ? 'Eliminar de favoritos' : 'Guardar en favoritos' }
+                        </Button>
 
-                        </Card.Header>
+                      </Card.Header>
 
-                        <Card.Body>
-                            <Text size={ 30 }>Sprites:</Text>
-                            <Container direction='row' display='flex' gap={ 0 }>
-                                <Image
-                                  src={ pokemon.sprites.front_default }
-                                  alt={ pokemon.name }
-                                  width={ 100 }
-                                  height={ 100 }
-                                />
-                                <Image
-                                  src={ pokemon.sprites.back_default }
-                                  alt={ pokemon.name }
-                                  width={ 100 }
-                                  height={ 100 }
-                                />
-                                <Image
-                                  src={ pokemon.sprites.front_shiny }
-                                  alt={ pokemon.name }
-                                  width={ 100 }
-                                  height={ 100 }
-                                />
-                                <Image
-                                  src={ pokemon.sprites.back_shiny }
-                                  alt={ pokemon.name }
-                                  width={ 100 }
-                                  height={ 100 }
-                                />
-                            </Container>
-                        </Card.Body>
+                      <Card.Body>
+                          <Text size={ 30 }>Sprites:</Text>
+                          <Container direction='row' display='flex' gap={ 0 }>
+                              <Image
+                                src={ pokemon.sprites.front_default }
+                                alt={ pokemon.name }
+                                width={ 100 }
+                                height={ 100 }
+                              />
+                              <Image
+                                src={ pokemon.sprites.back_default }
+                                alt={ pokemon.name }
+                                width={ 100 }
+                                height={ 100 }
+                              />
+                              <Image
+                                src={ pokemon.sprites.front_shiny }
+                                alt={ pokemon.name }
+                                width={ 100 }
+                                height={ 100 }
+                              />
+                              <Image
+                                src={ pokemon.sprites.back_shiny }
+                                alt={ pokemon.name }
+                                width={ 100 }
+                                height={ 100 }
+                              />
+                          </Container>
+                      </Card.Body>
+                      
                     </Card>
                 </Grid>
 
